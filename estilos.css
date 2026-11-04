@@ -1,0 +1,104 @@
+/* JustiData Solutions S.A. - Sistema de Gestión y Seguimiento de Pericias */
+:root{
+  --azul-900:#0b1f3a;--azul-800:#112b50;--azul-700:#1b3f72;--azul-500:#2f64a8;--azul-100:#dde7f4;
+  --gris-50:#f3f5f9;--gris-100:#e6eaf1;--gris-300:#c6cfdc;--gris-600:#586377;--texto:#1b2433;
+  --ok:#1d7248;--ok-bg:#dff1e7;--aviso:#8a5b00;--aviso-bg:#fbefd2;
+}
+*{box-sizing:border-box;margin:0}
+body{font:15px/1.55 "Source Sans 3","Segoe UI",system-ui,sans-serif;color:var(--texto);background:var(--gris-50)}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;color:var(--azul-900);line-height:1.25}
+h1{font-size:1.65rem}
+a{color:var(--azul-500)}
+:focus-visible{outline:2px solid var(--azul-500);outline-offset:2px}
+
+/* Estructura general */
+.app{display:grid;grid-template-columns:232px minmax(0,1fr);grid-template-rows:auto 1fr;min-height:100vh}
+.cabecera{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  background:var(--azul-900);color:#fff;padding:.75rem 1.5rem}
+.marca{display:flex;align-items:center;gap:.75rem}
+.logo{width:38px;height:38px;border-radius:6px;background:#fff;color:var(--azul-900);display:grid;place-items:center;
+  font:700 1.3rem Georgia,serif}
+.marca strong{display:block;font:600 1.2rem/1.1 "Source Serif 4",Georgia,serif}
+.marca small{color:#b9c8de;font-size:.82rem}
+.sesion{text-align:right;font-size:.85rem;color:#b9c8de}
+.sesion b{display:block;color:#fff;font-weight:600}
+.lateral{background:#fff;border-right:1px solid var(--gris-100);padding:1.25rem .75rem}
+.lateral a{display:block;padding:.65rem .9rem;margin-bottom:.25rem;border-left:3px solid transparent;
+  border-radius:0 4px 4px 0;color:var(--texto);text-decoration:none;font-weight:600}
+.lateral a:hover{background:var(--gris-50)}
+.lateral a.activo{background:var(--azul-100);border-left-color:var(--azul-800);color:var(--azul-900)}
+.contenido{padding:1.75rem;max-width:1200px;width:100%}
+.titulo-pagina{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1.25rem}
+.migas{font-size:.85rem;color:var(--gris-600);margin-bottom:.25rem}
+.subtitulo{color:var(--gris-600);margin-top:.25rem}
+
+/* Paneles */
+.panel{background:#fff;border:1px solid var(--gris-100);border-radius:6px;margin-bottom:1.25rem}
+.panel>h2{font-size:1.1rem;padding:.85rem 1.25rem;border-bottom:1px solid var(--gris-100);border-left:4px solid var(--azul-700)}
+.cuerpo{padding:1.25rem}
+.panel-encabezado{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--gris-100);border-left:4px solid var(--azul-700);padding:.6rem 1.25rem}
+.panel-encabezado h2{font-size:1.1rem}
+
+/* Formularios */
+.grilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem 1.25rem}
+.ancho{grid-column:1/-1}
+label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.25rem;color:var(--azul-900)}
+input,select,textarea{width:100%;padding:.55rem .7rem;border:1px solid var(--gris-300);border-radius:4px;
+  font:inherit;background:#fff;color:var(--texto)}
+textarea{resize:vertical}
+input[readonly]{background:var(--gris-50);color:var(--gris-600)}
+.ayuda{font-size:.8rem;color:var(--gris-600);margin-top:.2rem}
+.perito{border:1px solid var(--gris-100);background:var(--gris-50);border-radius:6px;padding:1rem;margin-bottom:.75rem}
+.perito-cab{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
+.perito-cab h3{font-size:1rem}
+
+/* Botones */
+.btn{display:inline-block;padding:.55rem 1.1rem;border:1px solid var(--azul-800);border-radius:4px;background:#fff;
+  color:var(--azul-800);font:600 .92rem "Source Sans 3","Segoe UI",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--azul-100)}
+.btn-primario{background:var(--azul-800);color:#fff}
+.btn-primario:hover{background:var(--azul-700)}
+.btn-quitar{border-color:transparent;color:#a23b3b;padding:.25rem .6rem}
+.btn-quitar:hover{background:#f7e3e3}
+.acciones{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:flex-end}
+.acciones .izq{margin-right:auto}
+
+/* Tablas */
+.tabla-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{background:var(--gris-100);color:var(--azul-900);text-align:left;padding:.65rem .8rem;white-space:nowrap}
+td{padding:.65rem .8rem;border-top:1px solid var(--gris-100);vertical-align:top}
+tbody tr:hover{background:var(--gris-50)}
+.resumen{padding:.6rem 1.25rem;font-size:.85rem;color:var(--gris-600);border-top:1px solid var(--gris-100)}
+
+/* Estados */
+.estado{display:inline-block;padding:.15rem .65rem;border-radius:999px;font-size:.8rem;font-weight:600;white-space:nowrap}
+.e-curso{background:var(--azul-100);color:var(--azul-700)}
+.e-presentado{background:var(--ok-bg);color:var(--ok)}
+.e-ampliacion{background:var(--aviso-bg);color:var(--aviso)}
+.e-final{background:var(--gris-100);color:var(--gris-600)}
+
+/* Lista de datos (pantalla de consulta) */
+.datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem 1.25rem}
+.datos dt{font-size:.82rem;color:var(--gris-600)}
+.datos dd{font-weight:600}
+.datos .ancho dd{font-weight:400;max-width:75ch}
+
+/* Impresión */
+@media print{
+  .cabecera,.lateral,.acciones{display:none}
+  .app{display:block}.contenido{padding:0}
+  .panel{break-inside:avoid;border-color:#999}
+}
+
+/* Adaptable */
+@media(max-width:860px){
+  .app{grid-template-columns:1fr}
+  .lateral{display:flex;gap:.25rem;overflow-x:auto;padding:.5rem;border-right:0;border-bottom:1px solid var(--gris-100)}
+  .lateral a{white-space:nowrap;margin:0;border-left:0;border-bottom:3px solid transparent;border-radius:4px 4px 0 0}
+  .lateral a.activo{border-bottom-color:var(--azul-800)}
+  .contenido{padding:1rem}
+  .sesion{display:none}
+  .acciones .izq{margin-right:0}
+}
